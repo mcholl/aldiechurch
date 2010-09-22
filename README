@@ -1,0 +1,10 @@
+AldieChurch.com is currently in Drupal.  Key problems:
+1. Posting new stuff is too complicated
+2. The current host (AMHosting) turned on Safe Mode, causing a warning mesage we don't like
+3. Permnissions are such that we can't upload pictures or anthing like that.
+
+Basically, all of this is causing me to want to redo this project as a whole new site done in WordPress.
+Yes, I'm being a bit selfish in wanting to build a portfolio, but hey, this is my demo.
+
+Michael Hollinger
+9/21/10
