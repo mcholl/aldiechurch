@@ -1,0 +1,14 @@
+	BODY {
+		background-color: CCFFFF;
+	}
+	
+	#container {
+		width: 630px;
+		margin: 0 auto;
+		border: 1px solid black;
+		background-color: white;
+		padding: 10px;
+		
+		font-family: "Callibri", sans-serif;
+		font-size: 12px;
+	}
