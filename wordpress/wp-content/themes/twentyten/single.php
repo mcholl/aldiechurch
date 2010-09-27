@@ -9,6 +9,12 @@
 
 get_header(); ?>
 
+		<STYLE type='text/css'>
+			.navigation, p.nocomments, .entry-utility, .entry-meta {
+				display:none;
+			}
+		</STYLE>
+
 		<div id="container">
 			<div id="content" role="main">
 
@@ -66,5 +72,4 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

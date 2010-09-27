@@ -1,49 +1,32 @@
-<STYLE type='text/css'>
-	#header {
-		background-color: white;
-		font-family: "Callibri", sans-serif;
-		display: block;
-		width: 650px;
-		border: 1px solid black;
-		border-bottom-width: 0px;
-		margin: 0px auto;
-		height: 60px;
-	}
-	/* 		float: left;
-	*/
-	#header IMG, #header DIV { 
-		height: 50px; 		
-		float: left;
-		margin: 5px 25px 5px 25px;
-	}
-	#header p span{
-		font-variant: small-caps;
-		font-size: 20pt; 
-	}
-	#header p span.blue { color: rgb(66, 120, 211); }
-	#header p span.red { color: rgb(214, 0, 29); }
-
-	#header p {		
-		font-size: 11pt;
-		color: rgb(66, 120, 211);
-		margin: 0px;
-		text-align: center;
-	}
-
-	.login_req {
-		color: rgb(180, 180, 180);
-	}
+<?php
+/**
+ *@package WordPress
+ *@subpackage TWenty_Ten
+ *@since Twenty Ten 1.0
+ */?>
+<!DOCTYPE html>
+<HTML <?php language_attributes(); ?>>
+	<HEAD>
+		<TITLE>Church of Our Redeemer</TITLE>
+		<STYLE type='text/css'>
+			<?php include('mystyle.css'); ?>
+		</STYLE>
+	</HEAD>
 	
-</STYLE>
+	<BODY <?php body_class(); ?>>
+		<?php
+			$base = '/aldiechurch';
+		?>
 
-<DIV id='header'>
-	<IMG src='images/episshield.png' />
-	<DIV>
-		<p><SPAN class='blue'>The Church of&nbsp;</SPAN><SPAN class='red'>Our Redeemer</SPAN><p>
-		<p>Ears to Hear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hearts to Love&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wills devoted to Serve</p>
-	</DIV>
-	<IMG src='images/large_church2.jpg' />
-	<br />
-</DIV>
+		<DIV id='topmargin'>&nbsp;</DIV>
+		<DIV id='header'>
+			<IMG src='<?= $base ?>/images/episshield.png' />
+			<DIV>
+				<p><SPAN class='blue'>The Church of&nbsp;</SPAN><SPAN class='red'>Our Redeemer</SPAN><p>
+				<p>To Know Him and Make Him Known In Word and Deed</p>
+			</DIV>
+			<!--<IMG src='<?= $base ?>/images/large_church2.jpg' />-->
+			<br />
+		</DIV>
 
-<?php include('nav.php'); ?>
+		<?php include('nav.php'); ?>

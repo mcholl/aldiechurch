@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<HTML>
 <?php
 /**
  * The main template file.
@@ -13,8 +15,8 @@
  * @since Twenty Ten 1.0
  */
 
-get_header(); ?>
-
+	get_header();  //<div id='header'> & <div id='menu'>
+?>
 		<div id="container">
 			<div id="content" role="main">
 
@@ -27,6 +29,5 @@ get_header(); ?>
 			?>
 			</div><!-- #content -->
 		</div><!-- #container -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
+</HTML>

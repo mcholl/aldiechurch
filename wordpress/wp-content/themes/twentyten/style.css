@@ -1,12 +1,11 @@
 /*
 Theme Name: Twenty Ten
 Theme URI: http://wordpress.org/
-Description: The 2010 theme for WordPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+Description: 
 Author: the WordPress team
 Version: 1.1
-Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
+Tags:
 */
-
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
@@ -63,14 +62,6 @@ LAYOUT: Two columns
 DESCRIPTION: Two-column fixed layout with one sidebar right of content
 */
 
-#container {
-	float: left;
-	margin: 0 -240px 0 0;
-	width: 100%;
-}
-#content {
-	margin: 0 280px 0 20px;
-}
 #primary,
 #secondary {
 	float: right;
@@ -1283,13 +1274,11 @@ code {
 	.widget-area {
 		display: none !important;
 	}
-	#container,
 	#header,
 	#footer {
 		margin: 0;
 		width: 100%;
 	}
-	#content,
 	.one-column #content {
 		margin: 24pt 0 0;
 		width: 100%;
