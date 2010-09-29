@@ -8,6 +8,15 @@
 		<li >
 			<a href='<?= $pages_base ?>/home.php'>Home</a>
 			<ul>
+				<li>
+					<a href='<?= $pages_base ?>/welcome.php'>Welcome</a>
+					<p>The Home Page for users who are not logged in</p>
+				</li>
+				<li class='login_req'>
+					<a href='<?= $pages_base ?>/landing.php'>Home [todo]</a>
+					<p>The Home Page for users who are logged in</p>
+				</li>
+
 				<li >
 					<a href='<?= $pages_base ?>/login.php'>Login [TODO]</a>
 					<p>In order to gain access to menu links that are greyed out, you must first log in. You may log in using your Facebook Id, a Google Mail id, Yahoo Id, or any other OpenId provider. Your information will be stored between sessions in a cookie, unless if you turn those off. There is no Aldie-Church-specific log-in option.</p>
@@ -56,7 +65,7 @@
 				</li>
 				<li >
 					<a href='http://www.commonprayer.org/offices.cfm'>Daily Offices (1928)</a>
-					<p>From the book of Common Prayer, a helpful daily devotional, with prayers and readings that will take you through all of scripture in three years.</p>
+					<p>From the book of Common Prayer, a helpful daily devotional, with prayers and readings that will take you through all of scripture in three years. To be clear, we use the 1979 BCP in our services, but the 1928 BCP, in addition to being out of copyright, is pretty good too.</p>
 				</li>
 				<li>&nbsp</li>
 				<li class='login_req'>
@@ -145,6 +154,10 @@
 				<li >
 					<a href='<?=$pages_base?>/directions'>Directions</a>
 					<p>How to find us in real life.</p>
+				</li>
+				<li >
+					<a href='http://villageofaldie.com'>Our Village</a>
+					<p>Some information about Aldie, VA.</p>
 				</li>
 				<li >
 					<a href='<?=$posts_base?>/about_us/faq/'>Frequently Asked Questions</a>
