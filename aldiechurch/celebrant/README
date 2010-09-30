@@ -1,0 +1,3 @@
+Celebrant is the Worship Particpant's Schedule. For any given Sunday service, several people will be performing roles (Ushers, LEM, Lector, Acolyte, Coffee Hour Hosts, Preacher, Celebrant). This database stores that information for any given Sunday and displays it on the website.
+
+I could have done this in Java, Rails, C#, or PHP.  I chose to keep it simple, even though it probably would have been better for my skills to do one of the first three...
