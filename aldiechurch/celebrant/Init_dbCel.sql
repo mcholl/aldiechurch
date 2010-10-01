@@ -29,8 +29,8 @@ CREATE TABLE cel_particpants (
 	PRIMARY KEY(p_id)
 ) ENGINE=INNODB;
 
-DROP TABLE IF EXISTS cel_particpant_roles;
-CREATE TABLE cel_particpant_roles (
+DROP TABLE IF EXISTS cel_participant_roles;
+CREATE TABLE cel_participant_roles (
 	p_id		int,
 	role_id	int,
 	FOREIGN KEY(p_id) REFERENCES cel_participants(p_id) 
@@ -102,19 +102,39 @@ BEGIN
 		ON DUPLICATE KEY UPDATE service_date = add_date, service_offer = service, description = descrip;
 END //
 
+-- Helper / Testing function to choose a random willing particpant
+DROP PROCEDURE IF EXISTS randomly_select_participant_from_role //
+CREATE PROCEDURE randomly_select_participant_from_role (roleid INT, OUT pid INT)
+BEGIN
+	SELECT p_id FROM cel_participant_roles WHERE role_id=roleid ORDER BY RAND() LIMIT 1 INTO pid;
+END //
+
+-- Helper / testing function to fill a particular service with staff
+DROP PROCEDURE IF EXISTS randomly_select_participants //
+CREATE PROCEDURE randomly_select_participants (dateid INT)
+BEGIN
+	DECLARE roleid INT;
+	DECLARE done INT DEFAULT 0;
+	DECLARE roles CURSOR FOR SELECT role_id FROM cel_roles;
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+	SET @pid  = 1 ;
+	
+	open roles;
+	readloop: LOOP
+		FETCH roles INTO roleid;
+		IF done THEN 
+			LEAVE readloop;
+		END IF;
+		
+		CALL randomly_select_participant_from_role(roleid, @pid);
+		INSERT INTO cel_signups (date_id, p_id, role_id ) VALUES (dateid, @pid, roleid);
+	END LOOP;
+END //
+
 DELIMITER ;
 
-CALL proc_add_sundays_through('2013-11-01', '10a', 'Regular Service');
-
--- Add Christmas Services
-CALL proc_add_service_date('2010-12-24', '5p', 'Early Christmas Service');
-CALL proc_add_service_date('2010-12-24', '11p', 'Late Christmas Service');
-CALL proc_add_service_date('2011-12-24', '5p', 'Early Christmas Service');
-CALL proc_add_service_date('2011-12-24', '11p', 'Late Christmas Service');
-CALL proc_add_service_date('2012-12-24', '5p', 'Early Christmas Service');
-CALL proc_add_service_date('2012-12-24', '11p', 'Late Christmas Service');
-
--- Add Easter Vigil Services
-CALL proc_add_service_date('2011-04-23', '5p', 'Easter Vigil');
-CALL proc_add_service_date('2012-04-08', '5p', 'Easter Vigil');
-CALL proc_add_service_date('2013-03-31', '5p', 'Easter Vigil');
+DROP VIEW IF EXISTS vw_volunteers;
+CREATE VIEW vw_volunteers AS 
+	SELECT r.role_id, r. description, p.p_id, p.name, p.email
+	     FROM cel_roles r, cel_participants p, cel_participant_roles cpr
+	     WHERE cpr.role_id=r.role_id AND cpr.p_id = p.p_id;
