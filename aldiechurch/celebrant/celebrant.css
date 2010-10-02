@@ -1,0 +1,15 @@
+	#body_area { 
+		display: table; 
+		width: 350px;
+		border: 1px solid black;
+	}
+	
+	.job_row, .date_row { display: table_row; }
+	.label, .answer { display: table-cell; }
+	.selector, .label { width: 120px; }
+	.elected_object , .answer { width: 180px; }
+	
+	.descrip { display:none; }
+	.time { font-style: bold; }
+	
+	SELECT { width: 180px; }
