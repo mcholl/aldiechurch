@@ -1,0 +1,27 @@
+[GENERAL]
+Data Types=1
+IncludeDep=1
+IncludeGuard=1
+IncludeHH=0
+IncludeOrg=0
+GroupFilter=0
+Export Types=11
+Include Header=0
+BlankIfZero=0
+Append=0
+OpenWhenDone=1
+Export Filename=C:\Users\mcholl\Documents\cor_contacts.XML
+Sep Type=Comma
+Quote Type=All
+Quote Mark Type=Double
+[FIELDS]
+fld0=Members,MBRID
+fld1=Members,FAMLYID
+fld2=Members,LASTNAME
+fld3=Members,FIRSTNAME
+fld4=Contact Information,NUMBER,Home (Voice)
+fld5=Contact Information,NUMBER,Work (Voice)
+fld6=Contact Information,NUMBER,Home (Pager)
+fld7=Contact Information,NUMBER,Home (E-mail)
+fld8=Contact Information,NUMBER,Work (Pager)
+fld9=Contact Information,NUMBER,Work (E-mail)

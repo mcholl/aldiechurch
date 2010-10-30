@@ -1,0 +1,34 @@
+<HTML>
+	<HEAD>
+		<TITLE>Directory Import</TITLE>
+	</HEAD>
+	<BODY>
+		<h1>Import directory data from Membership Plus 11</h1>
+		<FORM id='import_form' method='post' action='ImportDirectory.php'>
+			<p>Instructions:</p>
+			<ol>
+				<li>Start Membership Plus and select the COR data set</li>
+				<li>Select File | Export</li>
+				<li>Select [x] Use the options set in this export template file</li>
+				<li> Choose the file cor_phone_export</li>
+				<li>Select Export</li>
+
+				<li>Press this button: 
+					<INPUT type='button' onClick='upload_file('cor_phone_data.xml')'></INPUT>
+				</li>
+				<li>Press this button to start the import process
+					<INPUT type='submit' value='Import Uploaded Data'></INPUT>
+				</li>
+			</ol>
+		<p>Eventually this will be hidden</p>
+		<INPUT type='text' id='import'></INPUT>
+		
+		<SCRIPT type='text/javascript'>
+			function upload_file(import_file) {
+				//Reads the contents of the file into the import field, which is then posted to ImportDirectory.php
+				
+				
+			}
+		</SCRIPT>
+	</BODY>
+</HTML>
