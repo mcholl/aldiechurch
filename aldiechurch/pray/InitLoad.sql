@@ -1,0 +1,73 @@
+DELETE FROM pray_main;
+DELETE FROM pray_sub;
+DELETE FROM pray_lifespan;
+
+INSERT INTO pray_main (display, pray_cat, is_member) VALUES
+	('Lisa Livermore', 1, true),
+	('Elizabeth Catron', 1, true),
+	('Candi Caulk', 1, true),
+	('Lucy Owusu-Gwayu', 1, true),
+	('Caroline Memery', 1, true),
+	('Cate Roche', 1, true),
+	('Rex Gile', 1, true),
+	('Scott', 1, false),
+	('Sam McCullough', 1, false),
+	('Barbara O\' Leary', 1, false),
+	('Tess', 1, false),
+	('David Kloecker', 1, false),
+	('Larry Nail', 1, false),
+	('Tom and Susan Baber', 1, false),
+	('Natascia Alessi', 1, false),
+	('Ron Hall', 1, false),
+	('Eileen Hough', 1, false),
+	('Audrey & Whit Minker', 1, false),
+	('Mark Sears', 1, false),
+	('Erin', 1, false),
+	('Jennifer & Larry Jones', 1, false),
+	('Jessie Falls', 1, false),
+	('Kathy Stanley', 1, false),
+	('Paul Schlapbach', 1, false),
+	('Bob', 1, false),
+	('Glenn Waite', 1, false),
+	('Sam Tersingi', 1, false),
+	('Jeff English', 1, false),
+	('Marta Gugliardo', 1, false),
+	('Gibson Crumley', 1, false),
+	('Lorraine Bour', 1, false),
+	('Anne Spencer', 1, false),
+	('Samuel Spencer', 1, false),
+	('Kurt', 1, false),
+	('Diane Glusko', 1, false),
+	('Jennifer Ann', 1, false),
+	('Hida Rapp', 1, false),
+	('Cindy Burden', 1, false),
+	('Karen Wiechelt', 1, false),
+	('Jason Morgan', 1, false),
+	('Donna Wilson', 1, false),
+	('Carl Garrison', 1, false),
+	('Mary Lyman Jackson', 1, false),
+	('Alvin Robinson', 1, false),
+	('Janet King', 1, false),
+	('Shelly Scheyder', 1, false),
+	('Irene Lowe', 1, false),
+	('Chris', 1, false),
+	('Jean', 1, false),
+	('Wanda Constantine', 1, false),
+	('Jason Grove', 3, false),
+	('Ian Kursel', 3, false),
+	('Jordan Whilhelm', 3, false),
+	('Bret Jefferson', 3, false),
+	('W. Buddy Bennet', 3, false),
+	('Nick Divito', 3, false),
+	('Our children', 5, false),
+	('Our schools', 5, false),
+	('Our neighbors', 5, false),
+	('Our elected leaders', 5, false),
+	('the Unemployed and the underemployed', 5, false);
+
+	
+UPDATE pray_main SET details = 'No Details Available - Inital Load', is_public=true;
+
+INSERT INTO pray_sub SELECT pray_id, '1' AS 'submitter_id', 'Init_load' as 'relationship' FROM pray_main;
+
+INSERT INTO pray_lifespan SELECT pray_id, CURDATE() AS 'valid_from', ADDDATE( CURDATE(), INTERVAL 4 MONTH) AS 'valid_until', true AS 'is_active' FROM pray_main;
